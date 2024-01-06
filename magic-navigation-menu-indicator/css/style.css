@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --color:#2C2D2A;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--color);
+}
+.navigation{
+  width: 350px;
+  height: 70px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.navigation ul{
+  display: flex;
+  width: 350px;
+}
+.navigation ul li{
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+.navigation ul li a{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+.navigation ul li a .icon{
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 21px;
+  text-align: center;
+  transition: .3s;
+  color: var(--color);
+}
+.navigation ul li.active a .icon{
+  transform: translateY(-32px);
+}
+.navigation ul li a .text{
+  position: absolute;
+  color: var(--color);
+  font-weight: 400;
+  font-size: 17px;
+  transition: .3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.navigation ul li.active a .text{
+  opacity: 1;
+  transform: translateY(10px);
+}
+.point{
+  position: absolute;
+  top:42%;
+  width: 70px;
+  height: 70px;
+  background: #595b57;
+  border-radius: 50%;
+  border: 5px solid var(--color);
+  transition: .5s;
+}
+.point::before{
+  content: '';
+  position: absolute;
+  top:45%;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  background:transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--color);
+}
+.point::after{
+  content: '';
+  position: absolute;
+  top:45%;
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  background:transparent;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--color);
+}
+.navigation ul li:nth-child(1).active ~ .point{
+  transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .point{
+  transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .point{
+  transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .point{
+  transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active ~ .point{
+  transform: translateX(calc(70px * 4));
+}
